@@ -13,7 +13,12 @@ ShoppingListEntry = namedtuple("ShoppingListEntry", ["name", "quantity"])
 with open(GROCERIES_CONFIG) as _file:
     possible_groceries = yaml.full_load(_file)
 
+
 def get_grocery_list(dd_mm_yyyy: str):
+    if os.path.isfile(os.path.join(GROCERY_LIST_ARCHIVE, f"{dd_mm_yyyy}.json")):
+        with open(os.path.join(GROCERY_LIST_ARCHIVE, f"{dd_mm_yyyy}.json")) as _file:
+            return json.load(_file)
+
     grocery_list = []
     for group, group_config in possible_groceries.items():
         food_options = [
@@ -28,5 +33,3 @@ def get_grocery_list(dd_mm_yyyy: str):
         _file.writelines([json.dumps(grocery_list)])
 
     return grocery_list
-
-get_grocery_list("07-12-2020")
