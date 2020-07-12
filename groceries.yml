@@ -1,0 +1,73 @@
+# - group:
+#     cadence: weekly, biweekly, monthly
+#     foods:
+#       strawberry: 1
+#       blueberry: 1
+fruit:
+  cadence: weekly
+  foods:
+    Peach: 3
+    Canteloupe: 1
+    Honeydew: 1
+    Cherries: 3
+    Nectarines: 3
+    Grapes: 1
+    Bananas: 3
+    Asian pear: 3
+    Plums: 3
+    Pears: 3
+berries:
+  cadence: weekly
+  foods:
+    Strawberries: 1
+    Blueberries: 1
+    Raspberries: 1
+    Blackberries: 1
+lettuce:
+  cadence: weekly
+  foods:
+    red butter lettuce: 1
+    butter lettuce: 1
+    arugala: 1
+veg:
+  cadence: weekly
+  foods:
+    Dino kale: 1
+    Baby kale: 12
+    Spinach: 1
+    Baby spinach: 12
+    Broccoli: 1
+    Collard greens: 1
+    Brussel sprouts: 1
+    Broccolini: 1
+more veg:
+  cadence: weekly
+  foods:
+    Cauliflower: 1
+    Green beans: 1
+    Carrots: 3
+    Persian cucumbers: 1
+    Bell peppers: 2
+    Corn on the cob: 1
+allium:
+  cadence: biweekly
+  foods:
+    Onion: 1
+    Green onion: 1
+    Shallot: 1
+mushrooms:
+  cadence: biweekly
+  foods:
+    Crimini: 1
+    White button: 1
+tomato:
+  cadence: weekly
+  foods:
+    Cheery: 1
+    Beefsteak: 1
+    Heirloom: 1
+citrus:
+  cadence: weekly
+  foods:
+    Lemon: 1
+    Lime: 1
