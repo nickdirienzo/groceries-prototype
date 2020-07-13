@@ -36,8 +36,9 @@ def get_grocery_list(dd_mm_yyyy: str):
 
     return grocery_list
 
+
 def get_substitute(entry: models.ShoppingListEntry):
-    food_options = possible_groceries[entry.group_name]['foods']
+    food_options = possible_groceries[entry.group_name]["foods"]
     food_options.pop(entry.name, None)
 
     sub = next(iter(food_options.keys()))
@@ -50,4 +51,3 @@ def get_substitute(entry: models.ShoppingListEntry):
     #         if e["name"] == entry.name:
     #             new_list.append(sub_entry)
     #         new_list.append(models.ShoppingListEntry(**e))
-    

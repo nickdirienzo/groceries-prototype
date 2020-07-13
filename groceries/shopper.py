@@ -36,11 +36,13 @@ def send_keys(driver: webdriver.Firefox, element_id: str, keys: str):
     )
     element.send_keys(keys)
 
+
 def find_select(driver: webdriver.Firefox, element_id: str):
     element = WebDriverWait(driver, TIMEOUT).until(
         EC.presence_of_element_located((By.ID, element_id))
     )
     return Select(element)
+
 
 def login():
     driver.get("https://amazon.com")
@@ -53,7 +55,9 @@ def login():
 
 
 def _get_specific_food(list_entry: models.ShoppingListEntry):
-    url = driver.find_element_by_xpath(f"//a[contains(@href, '{list_entry.plu}')]").get_attribute('href')
+    url = driver.find_element_by_xpath(
+        f"//a[contains(@href, '{list_entry.plu}')]"
+    ).get_attribute("href")
     driver.get(url)
 
     WebDriverWait(driver, 2).until(
@@ -152,6 +156,7 @@ def find_food(list_entry: models.ShoppingListEntry):
         send_keys(driver, "qtyFraction", 0)
 
     click(driver, "//button[text()='Add to cart']", by=By.XPATH)
+
 
 def go_to_cart():
     driver.get("https://primenow.amazon.com/cart?ref_=pn_dp_nav_cart")
