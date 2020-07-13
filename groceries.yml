@@ -58,16 +58,18 @@ allium:
 mushrooms:
   cadence: biweekly
   foods:
-    Crimini: 1
-    White button: 1
+    Crimini mushroom: 1
+    White button mushroom: 1
 tomato:
   cadence: weekly
   foods:
-    Cheery: 1
-    Beefsteak: 1
-    Heirloom: 1
+    Cherry tomato: 1
+    Beefsteak tomato: 1
+    Heirloom tomato: 1
 citrus:
   cadence: weekly
   foods:
     Lemon: 1
     Lime: 1
+  overrides:
+    Lemon: B079DSY3ZL

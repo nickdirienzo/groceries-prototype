@@ -1,1 +1,47 @@
-[["Peach", 3], ["Strawberries", 1], ["red butter lettuce", 1], ["Dino kale", 1], ["Cauliflower", 1], ["Onion", 1], ["Crimini", 1], ["Cheery", 1], ["Lemon", 1]]
+[
+  {
+    "name": "Peach",
+    "quantity": 3,
+    "product_id": null
+  },
+  {
+    "name": "Strawberries",
+    "quantity": 1,
+    "product_id": null
+  },
+  {
+    "name": "red butter lettuce",
+    "quantity": 1,
+    "product_id": null
+  },
+  {
+    "name": "Dino kale",
+    "quantity": 1,
+    "product_id": null
+  },
+  {
+    "name": "Cauliflower",
+    "quantity": 1,
+    "product_id": null
+  },
+  {
+    "name": "Onion",
+    "quantity": 1,
+    "product_id": null
+  },
+  {
+    "name": "Crimini mushroom",
+    "quantity": 1,
+    "product_id": null
+  },
+  {
+    "name": "Cherry tomato",
+    "quantity": 1,
+    "product_id": null
+  },
+  {
+    "name": "Lemon",
+    "quantity": 1,
+    "product_id": "B079DSY3ZL"
+  }
+]
