@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Canteloupe",
+    "group_name": "fruit",
+    "amount": 1,
+    "plu": "B07814KF5S"
+  },
+  {
+    "name": "Blueberries",
+    "group_name": "berries",
+    "amount": 1,
+    "plu": "B0789LWBDC"
+  },
+  {
+    "name": "red butter lettuce",
+    "group_name": "lettuce",
+    "amount": 1,
+    "plu": null
+  },
+  {
+    "name": "Baby spinach",
+    "group_name": "veg",
+    "amount": 1,
+    "plu": null
+  },
+  {
+    "name": "Cauliflower",
+    "group_name": "more veg",
+    "amount": 1,
+    "plu": null
+  },
+  {
+    "name": "Green onion",
+    "group_name": "allium",
+    "amount": 1,
+    "plu": null
+  },
+  {
+    "name": "Crimini mushroom",
+    "group_name": "mushrooms",
+    "amount": 1,
+    "plu": null
+  },
+  {
+    "name": "Heirloom tomato",
+    "group_name": "tomato",
+    "amount": 1,
+    "plu": null
+  },
+  {
+    "name": "Lime",
+    "group_name": "citrus",
+    "amount": 1,
+    "plu": null
+  },
+  {
+    "name": "Half gallon whole milk",
+    "group_name": "milk",
+    "amount": 1,
+    "plu": "B00GSL2MEC"
+  },
+  {
+    "name": "black forest ham",
+    "group_name": "lunch meats",
+    "amount": 1,
+    "plu": "B07D6SWN1X"
+  },
+  {
+    "name": "swiss cheese deli",
+    "group_name": "lunch cheese",
+    "amount": 1,
+    "plu": "B0787XSH45"
+  },
+  {
+    "name": "brioche buns",
+    "group_name": "bread",
+    "amount": 1,
+    "plu": "B07KCMR46C"
+  },
+  {
+    "name": "peanut butter",
+    "group_name": "peanut butter",
+    "amount": 1,
+    "plu": "B00823L8W6"
+  },
+  {
+    "name": "almond milk",
+    "group_name": "almond milk",
+    "amount": 1,
+    "plu": "B07Q62PKR3"
+  },
+  {
+    "name": "ground pork",
+    "group_name": "meats",
+    "amount": 1,
+    "plu": null
+  }
+]

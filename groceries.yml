@@ -153,9 +153,9 @@ lunch cheese:
     cheddar deli:
       amount: 1
       plu: B0787Z75F6
-    swiss cheese deli:
+    swiss cheese:
       amount: 1
-      plu: B0787XSH45
+      plu: B000R4BA4E
 bread:
   cadence: weekly
   foods:
