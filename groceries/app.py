@@ -8,6 +8,6 @@ def main():
     for list_entry in shopping_list:
         print(f"Looking for {list_entry}")
         shopper.find_food(list_entry)
-
+    shopper.go_to_cart()
 
 main()

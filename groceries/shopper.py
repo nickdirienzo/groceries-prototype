@@ -152,3 +152,6 @@ def find_food(list_entry: models.ShoppingListEntry):
         send_keys(driver, "qtyFraction", 0)
 
     click(driver, "//button[text()='Add to cart']", by=By.XPATH)
+
+def go_to_cart():
+    driver.get("https://primenow.amazon.com/cart?ref_=pn_dp_nav_cart")
