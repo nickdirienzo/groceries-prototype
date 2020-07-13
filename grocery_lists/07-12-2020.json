@@ -1,47 +1,80 @@
 [
   {
     "name": "Peach",
-    "quantity": 3,
-    "product_id": null
+    "group_name": "fruit",
+    "amount": 3,
+    "plu": "B07BFBFFDG"
   },
   {
     "name": "Strawberries",
-    "quantity": 1,
-    "product_id": null
+    "group_name": "berries",
+    "amount": 1,
+    "plu": "B0789V1QM5"
   },
   {
     "name": "red butter lettuce",
-    "quantity": 1,
-    "product_id": null
+    "group_name": "lettuce",
+    "amount": 1,
+    "plu": null
   },
   {
     "name": "Dino kale",
-    "quantity": 1,
-    "product_id": null
+    "group_name": "veg",
+    "amount": 1,
+    "plu": null
   },
   {
     "name": "Cauliflower",
-    "quantity": 1,
-    "product_id": null
+    "group_name": "more veg",
+    "amount": 1,
+    "plu": null
   },
   {
     "name": "Onion",
-    "quantity": 1,
-    "product_id": null
+    "group_name": "allium",
+    "amount": 1,
+    "plu": null
   },
   {
     "name": "Crimini mushroom",
-    "quantity": 1,
-    "product_id": null
+    "group_name": "mushrooms",
+    "amount": 1,
+    "plu": null
   },
   {
     "name": "Cherry tomato",
-    "quantity": 1,
-    "product_id": null
+    "group_name": "tomato",
+    "amount": 1,
+    "plu": null
   },
   {
     "name": "Lemon",
-    "quantity": 1,
-    "product_id": "B079DSY3ZL"
+    "group_name": "citrus",
+    "amount": 1,
+    "plu": "B079DSY3ZL"
+  },
+  {
+    "name": "Half gallon whole milk",
+    "group_name": "milk",
+    "amount": 1,
+    "plu": "B00GSL2MEC"
+  },
+  {
+    "name": "smoked turkey breast",
+    "group_name": "lunch meats",
+    "amount": 1,
+    "plu": "B079VRDK84"
+  },
+  {
+    "name": "cheddar deli",
+    "group_name": "lunch cheese",
+    "amount": 1,
+    "plu": "B0787Z75F6"
+  },
+  {
+    "name": "sliced white bread",
+    "group_name": "bread",
+    "amount": 1,
+    "plu": "B005LMQ9TI"
   }
 ]

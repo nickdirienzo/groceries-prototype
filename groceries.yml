@@ -1,75 +1,170 @@
 # - group:
 #     cadence: weekly, biweekly, monthly
 #     foods:
-#       strawberry: 1
+#       strawberry:
+#         amount: 0
+#         plu: str
 #       blueberry: 1
 fruit:
   cadence: weekly
   foods:
-    Peach: 3
-    Canteloupe: 1
-    Honeydew: 1
-    Cherries: 3
-    Nectarines: 3
-    Grapes: 1
-    Bananas: 3
-    Asian pear: 3
-    Plums: 3
-    Pears: 3
+    Peach:
+      amount: 3
+      plu: B07BFBFFDG
+    Canteloupe:
+      amount: 1
+      plu: B07814KF5S
+    Honeydew:
+      amount: 1
+      plu: B07811XCG9
+    Cherries:
+      amount: 1
+      plu: null
+    Nectarines:
+      amount: 3
+      plu: B079M4JW8B
+    Green grapes:
+      amount: 2
+      plu: B07T2BRQBN
+    Red grapes:
+      amount: 2
+      plu: B0787Y51CP
+    Bananas:
+      amount: 4
+      plu: B07885W5GF
+    Asian pear:
+      amount: 3
+      plu: null
+    Black plums:
+      amount: 3
+      plu: B0787W89T6
+    Pears:
+      amount: 3
+      plu: null
 berries:
   cadence: weekly
   foods:
-    Strawberries: 1
-    Blueberries: 1
-    Raspberries: 1
-    Blackberries: 1
+    Strawberries:
+      amount: 1
+      plu: B0789V1QM5
+    Blueberries:
+      amount: 1
+      plu: B0789LWBDC
+    Raspberries:
+      amount: 1
+      plu: B079YXD4H2
+    Blackberries:
+      amount: 1
+      plu: B07814HS6L
 lettuce:
   cadence: weekly
   foods:
-    red butter lettuce: 1
-    butter lettuce: 1
-    arugala: 1
+    red butter lettuce:
+      amount: 1
+    butter lettuce:
+      amount: 1
+    arugala:
+      amount: 1
 veg:
   cadence: weekly
   foods:
-    Dino kale: 1
-    Baby kale: 12
-    Spinach: 1
-    Baby spinach: 12
-    Broccoli: 1
-    Collard greens: 1
-    Brussel sprouts: 1
-    Broccolini: 1
+    Dino kale:
+      amount: 1
+    Baby kale:
+      amount: 1
+    Spinach:
+      amount: 1
+    Baby spinach:
+      amount: 1
+    Broccoli:
+      amount: 1
+    Collard greens:
+      amount: 1
+    Brussel sprouts:
+      amount: 1
+    Broccolini:
+      amount: 1
 more veg:
   cadence: weekly
   foods:
-    Cauliflower: 1
-    Green beans: 1
-    Carrots: 3
-    Persian cucumbers: 1
-    Bell peppers: 2
-    Corn on the cob: 1
+    Cauliflower:
+      amount: 1
+    Green beans:
+      amount: 1
+    Carrots:
+      amount: 3
+    Persian cucumbers:
+      amount: 1
+    Bell peppers:
+      amount: 2
+    Corn on the cob:
+      amount: 1
 allium:
   cadence: biweekly
   foods:
-    Onion: 1
-    Green onion: 1
-    Shallot: 1
+    Onion:
+      amount: 1
+    Green onion:
+      amount: 1
+    Shallot: 
+      amount: 1
 mushrooms:
   cadence: biweekly
   foods:
-    Crimini mushroom: 1
-    White button mushroom: 1
+    Crimini mushroom:
+      amount: 1
+    White button mushroom:
+      amount: 1
 tomato:
   cadence: weekly
   foods:
-    Cherry tomato: 1
-    Beefsteak tomato: 1
-    Heirloom tomato: 1
+    Cherry tomato:
+      amount: 1
+    Beefsteak tomato:
+      amount: 1
+    Heirloom tomato:
+      amount: 1
 citrus:
   cadence: weekly
   foods:
-    Lemon: 1
-    Lime: 1
-  overrides:
-    Lemon: B079DSY3ZL
+    Lemon:
+      amount: 1
+      plu: B079DSY3ZL
+    Lime: 
+      amount: 1
+milk:
+  cadence: weekly
+  foods:
+    Half gallon whole milk:
+      amount: 1
+      plu: B00GSL2MEC
+lunch meats:
+  cadence: weekly
+  foods:
+    smoked turkey breast:
+      amount: 1
+      plu: B079VRDK84
+    black forest ham:
+      amount: 1
+      plu: B07D6SWN1X
+lunch cheese:
+  cadence: weekly
+  foods:
+    cheddar deli:
+      amount: 1
+      plu: B0787Z75F6
+    swiss cheese deli:
+      amount: 1
+      plu: B0787XSH45
+bread:
+  cadence: weekly
+  foods:
+    sliced white bread:
+      amount: 1
+      plu: B005LMQ9TI
+    tortillas:
+      amount: 1
+      plu: B00KBVMAA6
+    brioche buns:
+      amount: 1
+      plu: B07KCMR46C

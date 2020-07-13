@@ -21,13 +21,9 @@ def get_grocery_list(dd_mm_yyyy: str):
     grocery_list = []
     for group, group_config in possible_groceries.items():
         food_options = {
-            name: models.ShoppingListEntry(name, quantity)
-            for name, quantity in group_config["foods"].items()
+            name: models.ShoppingListEntry(name, group_name=group, **food_option)
+            for name, food_option in group_config["foods"].items()
         }
-
-        overrides = group_config.get("overrides") or {}
-        for name, product_id in overrides.items():
-            food_options[name].product_id = product_id
 
         cadence = group_config["cadence"]
         # TODO: Stuff with cadence.
@@ -39,3 +35,19 @@ def get_grocery_list(dd_mm_yyyy: str):
         _file.writelines(json.dumps([e.serialize() for e in grocery_list], indent=2))
 
     return grocery_list
+
+def get_substitute(entry: models.ShoppingListEntry):
+    food_options = possible_groceries[entry.group_name]['foods']
+    food_options.pop(entry.name, None)
+
+    sub = next(iter(food_options.keys()))
+    sub_entry = models.ShoppingListEntry(sub, entry.group_name, **food_options[sub])
+    return sub_entry
+    # # Resave the file.
+    # new_list = []
+    # with open(os.path.join(GROCERY_LIST_ARCHIVE, f"{dd_mm_yyyy}.json")) as _file:
+    #     for e in json.load(_file):
+    #         if e["name"] == entry.name:
+    #             new_list.append(sub_entry)
+    #         new_list.append(models.ShoppingListEntry(**e))
+    

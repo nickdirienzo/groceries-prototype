@@ -3,10 +3,12 @@ from urllib.parse import urlencode
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.select import Select
 
+from groceries import list_maker
 from groceries import models
 
 EMAIL = os.environ.get("GROCERIES_AMAZON_EMAIL")
@@ -16,9 +18,10 @@ TIMEOUT = 10
 
 options = webdriver.FirefoxOptions()
 options.headless = False
-driver = None
+driver = webdriver.Firefox(options=options)
 
 NO_MORE_ITEMS = "Sorry, this item is no longer available."
+
 
 def click(driver: webdriver.Firefox, lookup: str, by: By = By.ID):
     element = WebDriverWait(driver, TIMEOUT).until(
@@ -33,6 +36,11 @@ def send_keys(driver: webdriver.Firefox, element_id: str, keys: str):
     )
     element.send_keys(keys)
 
+def find_select(driver: webdriver.Firefox, element_id: str):
+    element = WebDriverWait(driver, TIMEOUT).until(
+        EC.presence_of_element_located((By.ID, element_id))
+    )
+    return Select(element)
 
 def login():
     driver.get("https://amazon.com")
@@ -45,34 +53,74 @@ def login():
 
 
 def _get_specific_food(list_entry: models.ShoppingListEntry):
-    pass
+    url = driver.find_element_by_xpath(f"//a[contains(@href, '{list_entry.plu}')]").get_attribute('href')
+    driver.get(url)
+
+    WebDriverWait(driver, 2).until(
+        EC.presence_of_element_located((By.ID, "availability"))
+    )
+    in_stock = driver.find_element_by_id("availability").text == "In Stock."
+    if not in_stock:
+        print(f"Cannot add {list_entry}")
+        substitute = list_maker.get_substitute(list_entry)
+        print(f"Attempting to sub with {substitute}")
+        return find_food(substitute)
+
+    qty_dropdown = None
+    try:
+        qty_dropdown = find_select(driver, "primenowQuantity")
+        if qty_dropdown.first_selected_option.text != str(list_entry.amount):
+            send_keys(driver, "primenowQuantity", list_entry.amount)
+    except (TimeoutException, NoSuchElementException):
+        pass
+
+    # If that times out, let's try a different identifier.
+    if qty_dropdown is None:
+        qty_dropdown = find_select(driver, "primeNowVariableWeightWhole")
+        if qty_dropdown.first_selected_option.text != str(list_entry.amount):
+            send_keys(driver, "primeNowVariableWeightWhole", list_entry.amount)
+
+    # TODO: Support fractions.
+    try:
+        send_keys(driver, "primeNowVariableWeightFraction", 0)
+    except TimeoutException:
+        pass
+
+    click(driver, "add-to-cart-button")
+    try:
+        WebDriverWait(driver, 5).until(
+            EC.presence_of_element_located((By.ID, "primenow-atc-button-announce"))
+        )
+    except TimeoutException:
+        print(f"Cannot add {list_entry} to the cart.")
 
 
 def find_food(list_entry: models.ShoppingListEntry):
-    # Lazily instantiate driver.
-    driver = webdriver.Firefox(options=options)
-
     # If we've already logged in, let's not do it again.
     if not driver.get_cookies():
         login()
 
-    if list_entry.product_id:
-        return _get_specific_food(list_entry)
-
     url = "https://primenow.amazon.com/search?"
     query_params = {"keywords": list_entry.name, "rh": "p_95:A0D4"}
     driver.get(f"{url}{urlencode(query_params)}")
+
+    if list_entry.plu is not None:
+        return _get_specific_food(list_entry)
 
     click(driver, "//button[text()='Add']", by=By.XPATH)
 
     # Check to make sure we can add it to our cart.
     try:
         element = WebDriverWait(driver, 2).until(
-            EC.presence_of_element_located((By.XPATH, f"//div[text()='{NO_MORE_ITEMS}'"))
+            EC.presence_of_element_located(
+                (By.XPATH, f"//div[text()='{NO_MORE_ITEMS}'")
+            )
         )
         if element:
             print(f"Cannot add {list_entry}")
-            return
+            substitute = list_maker.get_substitute(list_entry)
+            print(f"Attempting to sub with {substitute}")
+            return find_food(substitute)
     except TimeoutException:
         pass
 
@@ -87,8 +135,10 @@ def find_food(list_entry: models.ShoppingListEntry):
         return
 
     if element:
-        # Modify this based on number of items or weight.
-        send_keys(driver, "qtyFull", list_entry.quantity)
+        # TODO: Modify this based on number of items or weight.
+        qty_dropdown = Select(driver.find_element_by_id("qtyFull"))
+        if qty_dropdown.first_selected_option.text != str(list_entry.amount):
+            send_keys(driver, "qtyFull", list_entry.amount)
 
     try:
         element = WebDriverWait(driver, 2).until(
@@ -102,6 +152,3 @@ def find_food(list_entry: models.ShoppingListEntry):
         send_keys(driver, "qtyFraction", 0)
 
     click(driver, "//button[text()='Add to cart']", by=By.XPATH)
-
-    import pdb; pdb.set_trace()
-    return
