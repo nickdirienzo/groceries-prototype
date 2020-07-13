@@ -168,3 +168,38 @@ bread:
     brioche buns:
       amount: 1
       plu: B07KCMR46C
+peanut butter:
+  cadence: monthly
+  foods:
+    peanut butter:
+      amount: 1
+      plu: B00823L8W6
+almond milk:
+  cadence: biweekly
+  foods:
+    almond milk:
+      amount: 1
+      plu: B07Q62PKR3
+meats:
+  cadence: weekly
+  foods:
+    salmon:
+      amount: 2
+      plu: null
+    chicken breast:
+      amount: 1
+    chicken thigh:
+      amount: 1
+    pancetta:
+      amount: 1
+    ground pork:
+      amount: 1
+    mild italian sausage:
+      amount: 1
+    skirt steak:
+      amount: 1
+    peeled deveined white shrimp:
+      amount: 1
+      plu: B0787XKCPW
+    tuna steak yellowfin:
+      amount: 1

@@ -1,6 +1,7 @@
 """Idk what else to call this. They make the grocery list."""
 import json
 import os
+import random
 
 import yaml
 
@@ -28,7 +29,7 @@ def get_grocery_list(dd_mm_yyyy: str):
         cadence = group_config["cadence"]
         # TODO: Stuff with cadence.
 
-        grocery_list.append(next(iter(food_options.values())))
+        grocery_list.append(random.choice(iter(food_options.values())))
 
     # Save for history.
     with open(os.path.join(GROCERY_LIST_ARCHIVE, f"{dd_mm_yyyy}.json"), "w") as _file:
